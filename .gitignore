@@ -1,2 +1,11 @@
 # Dependency directory
 node_modules
+
+# ENV variable
+variables.env
+
+# vscode
+.vscode
+
+
+
