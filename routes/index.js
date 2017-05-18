@@ -24,6 +24,15 @@ router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
 router.get('/tags', catchErrors(storeController.getStoresByTag));
 router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
 
-router.get('/login', userController.loginForm)
+router.get('/login', userController.loginForm);
+router.get('/register', userController.registerForm);
+
+// 1. Validate the registration data
+// 2. Register the user
+// 3. we need to log them in
+router.post('/register', 
+  userController.validateRegister,
+  userController.register
+);
 
 module.exports = router;
